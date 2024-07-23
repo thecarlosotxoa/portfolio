@@ -9,8 +9,23 @@ const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
   const handleClick = () => setMenuClick(!menuClick);
 
+  // adding use state to set the color for navbar when scrolling through Y axis
+  const [navbarColor, setNavbarColor] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 100){
+      setNavbarColor(true);
+    }
+    else{
+      setNavbarColor(false);
+    }
+  };
+
+  // adding event listener to window scroll to trigger navbar color change
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
-    <div className="header">
+    // add if statements to classname to change depending on scroll position
+    <div className={navbarColor ? "header header-bg" : "header"}>
       <Link to="/">
         <h1>Logo</h1>
       </Link>
