@@ -10,14 +10,14 @@ const Work = () => {
     <div className="work-container">
       <h1 className="project-heading">Projects</h1>
       <div className="project-container">
-        {WorkCardData.map((val, ind) => {
+        {WorkCardData.map((obj, ind) => {
           return (
             <WorkCard
               key={ind}
-              imgsrc={val.imgsrc}
-              title={val.title}
-              text={val.text}
-              view={val.view}
+              imgsrc={obj.imgsrc}
+              title={obj.title}
+              text={obj.text}
+              view={obj.view}
             />
           );
         })}
